@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My-To-Do-List</title>
+    <style>
+        .nav{
+            background-color:#ddd;
+            overflow: hidden;
+        }
+        .nav a {
+            float: left;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .nav a:hover {
+            background-color:aquamarine;
+            color: black;
+        }
+        h1{
+            font-size: 50px;
+        }
+        #display{
+            font-size: 30px;
+            background-color: aqua;
+            display: inline;
+        }
+    </style>
+</head>
+<body style="background-color:rgb(210, 6, 246);text-align: center; font-size: 30px;">
+    <div class="nav">
+        <a href="task.html">My Tasks</a>
+        <a href="#add">Add Tasks</a>
+        <a href="index.html">Log out</a>
+    </div>
+    <div id="task">
+        <h1>Your To-Do List</h1>
+        <div id="display"></div>
+        <script>
+            let count = 0;
+            function add_t() {
+                count+=1
+                var name = document.getElementById("tname").value;
+                var displayElement = document.getElementById("display");
+                displayElement.innerHTML += "<br>" + count + ". "+ name ; 
+            }
+        </script>
+    </div>
+    <div id="add">
+        <h1>Add Your Tasks here!</h1>
+        <input type="text" id="tname" name="tname">
+        <button onclick="add_t()">Add Task</button>
+
+    </div>
+</body>
+</html>
